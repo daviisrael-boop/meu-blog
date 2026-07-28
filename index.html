@@ -1,41 +1,104 @@
 
 <!DOCTYPE html>
-<html lang="pt-br"> 
-<head> 
-<meta charset="UTF-8"> 
-<meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Blog</title> 
-<style> 
-header{ 
-background-color: #0a06d6;
-color: #ed1111;
-text-align: center; 
-max-width: 800px; 
-margin: 0 auto; 
-padding: 16px; 
-} 
-main{ 
-background-color: #0ee6e2;
-color: #000000;
-max-width: 800px; 
-margin: 0 auto; 
-padding: 16px; 
-} 
-img{ 
-width: 80px; 
-height: 80px; 
-} 
-</style> 
-</head> 
-<body> 
-<header> 
-<h1>DAVISAGAVERSO</h1> 
-<p>LUGAR DE NERDS E DEBATES AMIGÁVEIS</p> </header> 
-<main> 
-<img src="logo.png" alt="descrição"> <h2>Bem-Vindos ao DAVISAGAVERSO!</h2> 
-<p>Por: davisagaverso</p> 
-<p>Fala, galera! Sejam muito bem-vindos ao meu espaço!</p> +
-<p>FALA GALERA! BEM VINDOS AO PERFIL DAVISAGAVERSO! AQUI FALAMOS DE QUASE TUDO DO MUNDO NERD, QUADRINHOS DA MARVEL E DC, SAGAS DE FILMES ULTRA VARIADOS, COMO JURASSIC WORLD, GODZILLA, DISNEY, PIXAR, DREAMWORKS, MARVEL, DC, SONIC, MARIO E MUITO MAIS! E É CLARO, MUITOS DEBATES DE POWERSCALING SOBRE OS NOSSOS PERSONAGENS FAVORITOS!
-PARA HOJE, NOS FOI SUGERIDO UM GRANDE DEBATE! SUPERMAN VS SENTINELA! TRAGAM ARGUMENTOS E SCANS A VONTADE, A ARENA ESTÁ ABERTA!</p>
-</main>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DAVISAGAVERSO - Blog</title>
+    <style>
+        header {
+            background-color: #0a06d6; /* Sua cor de fundo do header */
+            color: #ed1111; /* Sua cor de texto do header */
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 16px;
+        }
+
+        main {
+            background-color: #0ee6e2; /* Sua cor de fundo do main */
+            color: #000000; /* Sua cor de texto do main */
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 16px;
+        }
+        article{
+            display: flex;
+            align-items: flex-start; /* Alinha a imagem ao topo do texto */
+            margin-bottom: 20px; /* Espaço entre os posts */
+            border-bottom: 1px solid #ccc; /* Linha divisória opcional */
+            padding-bottom: 20px;
+        }
+
+        img {
+            width: 80px;
+            height: 80px;
+            margin-right: 16px; /* Espaço entre a imagem e o texto */
+        }
+
+        .artigo-autor {
+            font-weight: bold;
+        }
+        
+        button {
+            margin-right: 10px; /* Espaço entre os botões */
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>DAVISAGAVERSO</h1>
+        <p>LUGAR DE NERDS E DEBATES AMIGÁVEIS</p>
+    </header>
+    <main>
+        <article>
+                        <img src="logo.png"
+                alt="Logo do canal Davisagaverso">
+            <div>
+                <h2>Bem-Vindos ao DAVISAGAVERSO!</h2>
+                <p class="artigo-autor">Por: davisagaverso</p>
+                <p>Fala, galera! Sejam muito bem-vindos ao meu espaço!</p>
+                <button>❤️ <span>0</span></button>
+                <button>👍 <span>0</span></button>
+            </div>
+        </article>
+        <article>
+                        <img src="logo.png"
+                alt="Imagem ilustrativa para o debate Superman vs Sentinela">
+            <div>
+                <h2>GRANDE DEBATE: SUPERMAN VS SENTINELA!</h2>
+                <p class="artigo-autor">Por: davisagaverso</p>
+                <p>FALA GALERA! BEM VINDOS AO PERFIL DAVISAGAVERSO! AQUI FALAMOS DE QUASE TUDO DO MUNDO NERD, QUADRINHOS DA MARVEL E DC, SAGAS DE FILMES ULTRA VARIADOS, COMO JURASSIC WORLD, GODZILLA, DISNEY, PIXAR, DREAMWORKS, MARVEL, DC, SONIC, MARIO E MUITO MAIS! E É CLARO, MUITOS DEBATES DE POWERSCALING SOBRE OS NOSSOS PERSONAGENS FAVORITOS!</p>
+                <p>PARA HOJE, NOS FOI SUGERIDO UM GRANDE DEBATE! SUPERMAN VS SENTINELA! TRAGAM ARGUMENTOS E SCANS A VONTADE, A ARENA ESTÁ ABERTA!</p>
+                <button>❤️ <span>0</span></button>
+                <button>👍 <span>0</span></button>
+            </div>
+        </article>
+    </main>
 </body>
+<script>
+    const botoes = document.querySelectorAll("button");
+
+    botoes.forEach(function (botao) {
+        let curtiu = false;
+        botao.addEventListener("click", botaoClicado);
+        function botaoClicado() {
+            console.log("fui clicado");
+            let texto = botao.querySelector("span");
+            if (curtiu === false){
+                texto.textContent++;
+                curtiu = true;
+            } else{
+                texto.textContent--;
+                curtiu = false;
+            }
+        }
+    })
+
+
+</script>
+
 </html>
